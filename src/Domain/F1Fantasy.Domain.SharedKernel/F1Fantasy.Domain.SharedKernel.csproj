@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\F1Fantasy.Domain.SharedKernel\F1Fantasy.Domain.SharedKernel.csproj" />
-  </ItemGroup>
-
 </Project>
