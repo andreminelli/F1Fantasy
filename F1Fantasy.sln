@@ -5,7 +5,13 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{22080F74-748E-4625-BFC0-64FEE84136B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Fantasy.Domain", "F1Fantasy.Domain\F1Fantasy.Domain.csproj", "{55E1DA5D-2FA7-4E9D-84F8-588C3DAE381C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Domain", "F1Fantasy.Domain\F1Fantasy.Domain.csproj", "{55E1DA5D-2FA7-4E9D-84F8-588C3DAE381C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0A40568-6077-464E-AA51-801482195719}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
