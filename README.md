@@ -4,7 +4,9 @@
 
 ### C4 Model diagrams
 
-![System Context](./docs/c4-System%40Context_L1.drawio.svg)
+* System Context
+
+![System Context](./docs/c4-System%20Context_L1.drawio.svg)
 
 ## DDD Modeling
 
