@@ -1,5 +1,9 @@
 # F1 Fantasy 
 
+A toy project for a F1 Fantasy simulation application.
+DDD (Domain Drive Design) is used for modeling.
+Clean Architecture and CQS (Command/Query Separation) are used on its implementation.
+
 ## Architecture
 
 ### C4 Model diagrams

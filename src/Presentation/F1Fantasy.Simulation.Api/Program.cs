@@ -1,3 +1,7 @@
+using F1Fantasy.Application.Simulation;
+using F1Fantasy.Domain.Simulation;
+using F1Fantasy.Infrastructure.Abstractions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -12,29 +16,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var summaries = new[]
+app.MapGet("/teams/{teamId}/points", async (IQueryDispatcher dispatcher, TeamId teamId, CancellationToken cancellationToken) => 
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    var result = await dispatcher.Dispatch(new GetTeamPointsQuery(teamId), cancellationToken);
+    return Results.Ok(result.Points);
 })
-.WithName("GetWeatherForecast")
+.WithName("GetTeamPoints")
 .WithOpenApi();
 
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

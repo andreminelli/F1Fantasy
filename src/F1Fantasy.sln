@@ -16,13 +16,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Domain.Simulation
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Domain.SharedKernel", "Domain\F1Fantasy.Domain.SharedKernel\F1Fantasy.Domain.SharedKernel.csproj", "{45A545FD-18E7-4788-BEFF-5346636E953F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Fantasy.Domain.Simulation.Tests", "Domain\F1Fantasy.Domain.Simulation.Tests\F1Fantasy.Domain.Simulation.Tests.csproj", "{E41128DA-B7EC-4CF8-A1B4-D1B024918E94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Domain.Simulation.Tests", "Domain\F1Fantasy.Domain.Simulation.Tests\F1Fantasy.Domain.Simulation.Tests.csproj", "{E41128DA-B7EC-4CF8-A1B4-D1B024918E94}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{60146A28-C361-419F-92A2-A74F928773FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{DC11D762-ED3D-41F3-890C-51A92AF93B3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Fantasy.Simulation.Api", "Presentation\F1Fantasy.Simulation.Api\F1Fantasy.Simulation.Api.csproj", "{66BAA3D1-CB8A-42B4-A614-24A0EEBDE41A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Simulation.Api", "Presentation\F1Fantasy.Simulation.Api\F1Fantasy.Simulation.Api.csproj", "{66BAA3D1-CB8A-42B4-A614-24A0EEBDE41A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Fantasy.Application.Simulation", "Application\F1Fantasy.Application.Simulation\F1Fantasy.Application.Simulation.csproj", "{983FF673-D669-4BE5-BD37-468C4ED483F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Fantasy.Infrastructure.Abstractions", "Infrastructure\F1Fantasy.Infrastructure.Abstractions\F1Fantasy.Infrastructure.Abstractions.csproj", "{9309AB41-BD6B-43C8-A57B-C7AEDD483FA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1401E24A-8996-431E-AB8C-39EBBED304D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +52,14 @@ Global
 		{66BAA3D1-CB8A-42B4-A614-24A0EEBDE41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66BAA3D1-CB8A-42B4-A614-24A0EEBDE41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66BAA3D1-CB8A-42B4-A614-24A0EEBDE41A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983FF673-D669-4BE5-BD37-468C4ED483F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983FF673-D669-4BE5-BD37-468C4ED483F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983FF673-D669-4BE5-BD37-468C4ED483F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983FF673-D669-4BE5-BD37-468C4ED483F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9309AB41-BD6B-43C8-A57B-C7AEDD483FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9309AB41-BD6B-43C8-A57B-C7AEDD483FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9309AB41-BD6B-43C8-A57B-C7AEDD483FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9309AB41-BD6B-43C8-A57B-C7AEDD483FA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +69,8 @@ Global
 		{45A545FD-18E7-4788-BEFF-5346636E953F} = {22080F74-748E-4625-BFC0-64FEE84136B5}
 		{E41128DA-B7EC-4CF8-A1B4-D1B024918E94} = {22080F74-748E-4625-BFC0-64FEE84136B5}
 		{66BAA3D1-CB8A-42B4-A614-24A0EEBDE41A} = {60146A28-C361-419F-92A2-A74F928773FC}
+		{983FF673-D669-4BE5-BD37-468C4ED483F6} = {DC11D762-ED3D-41F3-890C-51A92AF93B3B}
+		{9309AB41-BD6B-43C8-A57B-C7AEDD483FA6} = {1401E24A-8996-431E-AB8C-39EBBED304D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD0CEDA6-0D3D-47C7-9DFA-A765A8ADF36E}

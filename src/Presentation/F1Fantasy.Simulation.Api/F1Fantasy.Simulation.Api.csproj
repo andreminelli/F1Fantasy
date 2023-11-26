@@ -15,4 +15,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\F1Fantasy.Application.Simulation\F1Fantasy.Application.Simulation.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\F1Fantasy.Infrastructure.Abstractions\F1Fantasy.Infrastructure.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

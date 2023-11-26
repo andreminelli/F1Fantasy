@@ -40,5 +40,3 @@ public class Team : Entity<TeamId>
         return points;
     }
 }
-
-public record TeamId(string Value);
