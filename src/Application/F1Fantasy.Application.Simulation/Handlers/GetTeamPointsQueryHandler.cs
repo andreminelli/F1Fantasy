@@ -3,7 +3,7 @@ using F1Fantasy.Infrastructure.Abstractions;
 
 namespace F1Fantasy.Application.Simulation.Handlers;
 
-public class GetPointsQueryHandler(ITeamRepository teamRepository) 
+public class GetPointsQueryHandler(ITeamRepository teamRepository)
     : IQueryHandler<GetTeamPointsQuery, GetTeamPointsQueryResult>
 {
     public async Task<GetTeamPointsQueryResult> Handle(GetTeamPointsQuery query, CancellationToken cancellationToken)

@@ -1,8 +1,12 @@
 using F1Fantasy.Application.Simulation;
 using F1Fantasy.Domain.Simulation;
+using F1Fantasy.Infrastructure;
 using F1Fantasy.Infrastructure.Abstractions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddInfrastructure();
+builder.Services.AddApplicationHandlers<F1Fantasy.Application.Simulation.GetTeamPointsQuery>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
