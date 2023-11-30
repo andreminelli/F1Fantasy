@@ -1,8 +1,10 @@
 # F1 Fantasy 
 
 A toy project for a F1 Fantasy simulation application.
-DDD (Domain Drive Design) is used for modeling.
-Clean Architecture and CQS (Command/Query Separation) are used on its implementation.
+
+**DDD** (Domain Drive Design) is used for modeling.
+
+**Clean Architecture** and **CQS** (Command/Query Separation) are used on its implementation.
 
 ## Architecture
 
@@ -17,4 +19,7 @@ Clean Architecture and CQS (Command/Query Separation) are used on its implementa
 ### Bounded Contexts
 - [Simulation](https://miro.com/app/board/uXjVNKoeXd8=/)
 - [Data Provider](https://miro.com/app/board/uXjVNKt88fI=/)
+- Inventory
+- Registration
+- Market
 
