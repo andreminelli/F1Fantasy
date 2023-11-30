@@ -4,6 +4,12 @@ namespace F1Fantasy.Domain.Simulation;
 
 public class Team : Entity<TeamId>
 {
+    public Team(TeamId id)
+    {
+        Id = id;
+        Drivers = new List<Driver>();
+    }
+
     public double Points { get; protected set; }
 
     protected IList<Driver> Drivers { get; }
