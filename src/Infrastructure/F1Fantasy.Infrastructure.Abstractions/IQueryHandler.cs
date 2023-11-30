@@ -1,7 +1,8 @@
 ﻿namespace F1Fantasy.Infrastructure.Abstractions;
 
-public interface IQueryHandler<in TQuery, TQueryResult>
+public interface IQueryHandler<TQuery, TQueryResult>
     where TQuery : IQuery<TQueryResult>
+    where TQueryResult : IQueryResult
 {
     Task<TQueryResult> Handle(TQuery query, CancellationToken cancellationToken);
 }
