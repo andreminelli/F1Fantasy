@@ -6,12 +6,13 @@ namespace F1Fantasy.Infrastructure;
 public class QueryDispatcher(IServiceProvider serviceProvider)
     : IQueryDispatcher
 {
-    public async Task<TQueryResult> Dispatch<TQuery, TQueryResult>(TQuery query, CancellationToken cancellationToken)
-        where TQuery : IQuery<TQueryResult>
+    public async Task<TQueryResult> Dispatch<TQuery, TQueryResult>(IQuery<TQuery, TQueryResult> query, CancellationToken cancellationToken)
+        where TQuery : IQuery<TQuery, TQueryResult>
         where TQueryResult : IQueryResult
     {
         var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TQueryResult));
         var handler = (IQueryHandler<TQuery, TQueryResult>) serviceProvider.GetRequiredService(handlerType);
-        return await handler.Handle(query, cancellationToken);
+        var queryCast = (TQuery) query;
+        return await handler.Handle(queryCast, cancellationToken);
     }
 }

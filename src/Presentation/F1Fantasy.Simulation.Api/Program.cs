@@ -22,7 +22,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("/teams/{teamId}/points", async (IQueryDispatcher dispatcher, TeamId teamId, CancellationToken cancellationToken) => 
 {
-    var result = await dispatcher.Dispatch<GetTeamPointsQuery, TeamPointsQueryResult>(new GetTeamPointsQuery(teamId), cancellationToken);
+    var result = await dispatcher.Dispatch(new GetTeamPointsQuery(teamId), cancellationToken);
     return Results.Ok(result.Points);
 })
 .WithName("GetTeamPoints")
