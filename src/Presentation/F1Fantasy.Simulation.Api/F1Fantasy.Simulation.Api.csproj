@@ -9,10 +9,19 @@
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
+  <!-- Swagger configuration -->
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+	
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="FastEndpoints" Version="5.20.1" />
+    <PackageReference Include="FastEndpoints.Security" Version="5.20.1" />
+    <PackageReference Include="FastEndpoints.Swagger" Version="5.20.1" />
+    <!--<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />-->
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <!--<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />-->
   </ItemGroup>
 
   <ItemGroup>

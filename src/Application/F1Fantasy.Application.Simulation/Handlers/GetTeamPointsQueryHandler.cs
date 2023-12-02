@@ -8,7 +8,7 @@ public class GetPointsQueryHandler(ITeamRepository teamRepository)
 {
     public async Task<TeamPointsQueryResult> Handle(GetTeamPointsQuery query, CancellationToken cancellationToken)
     {
-        var team = await teamRepository.GetById(query.Id, cancellationToken);
-        return new TeamPointsQueryResult(query.Id, team.Points);
+        var team = await teamRepository.GetById(query.TeamId, cancellationToken);
+        return new TeamPointsQueryResult(query.TeamId, team.Points);
     }
 }
