@@ -21,5 +21,8 @@ public record TeamId : IParsable<TeamId>
     }
 
     public static implicit operator TeamId(string value)
-        => new TeamId(value); 
+        => new TeamId(value);
+
+    public override string ToString()
+        => Value;
 }
