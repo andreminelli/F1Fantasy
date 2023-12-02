@@ -15,7 +15,7 @@ var app = builder.Build();
 
 app.UseFastEndpoints(config =>
     {
-        config.Serializer.Options.Converters.Add(new TeamIdJsonConverter());
+        config.Serializer.Options.AddCustomConverters();
     })
     .UseSwaggerGen();
 
