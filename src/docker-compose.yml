@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  f1fantasy.simulation.api:
+    image: ${DOCKER_REGISTRY-}f1fantasy.simulation.api
+    build:
+      context: .
+      dockerfile: Simulation/Presentation/F1Fantasy.Simulation.Api/Dockerfile

@@ -1,4 +1,4 @@
-﻿using F1Fantasy.Infrastructure.Json;
+﻿using F1Fantasy.Simulation.Infrastructure.Json;
 using System.Text.Json;
 
 namespace F1Fantasy.Simulation.Infrastructure;
