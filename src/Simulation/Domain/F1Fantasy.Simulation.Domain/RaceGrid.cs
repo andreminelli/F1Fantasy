@@ -1,4 +1,4 @@
-﻿namespace F1Fantasy.Domain.Simulation;
+﻿namespace F1Fantasy.Simulation.Domain;
 
 public class RaceGrid(IList<Driver> grid)
 {
@@ -6,6 +6,6 @@ public class RaceGrid(IList<Driver> grid)
         => grid.IndexOf(driver) switch
         {
             < 0 => 0,
-            int value => value+1
+            int value => value + 1
         };
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -25,9 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\F1Fantasy.Application.Simulation\F1Fantasy.Application.Simulation.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\F1Fantasy.Infrastructure.Abstractions\F1Fantasy.Infrastructure.Abstractions.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\F1Fantasy.Infrastructure\F1Fantasy.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\F1Fantasy.Infrastructure.Abstractions\F1Fantasy.Infrastructure.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\F1Fantasy.Infrastructure\F1Fantasy.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\F1Fantasy.Infrastructure\F1Fantasy.Simulation.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Application\F1Fantasy.Simulation.Application\F1Fantasy.Simulation.Application.csproj" />
   </ItemGroup>
 
 </Project>

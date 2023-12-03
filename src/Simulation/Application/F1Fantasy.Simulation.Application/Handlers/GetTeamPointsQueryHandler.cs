@@ -1,9 +1,10 @@
-﻿using F1Fantasy.Domain.Simulation;
-using F1Fantasy.Infrastructure.Abstractions;
+﻿using F1Fantasy.Infrastructure.Abstractions;
+using F1Fantasy.Simulation.Application;
+using F1Fantasy.Simulation.Domain;
 
-namespace F1Fantasy.Application.Simulation.Handlers;
+namespace F1Fantasy.Simulation.Application.Handlers;
 
-public class GetPointsQueryHandler(ITeamRepository teamRepository) 
+public class GetPointsQueryHandler(ITeamRepository teamRepository)
     : IQueryHandler<GetTeamPointsQuery, TeamPointsQueryResult>
 {
     public async Task<TeamPointsQueryResult> Handle(GetTeamPointsQuery query, CancellationToken cancellationToken)

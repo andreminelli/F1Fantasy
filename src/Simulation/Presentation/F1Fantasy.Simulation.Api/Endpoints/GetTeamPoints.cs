@@ -1,5 +1,5 @@
-﻿using F1Fantasy.Application.Simulation;
-using F1Fantasy.Infrastructure.Abstractions;
+﻿using F1Fantasy.Infrastructure.Abstractions;
+using F1Fantasy.Simulation.Application;
 using FastEndpoints;
 
 namespace F1Fantasy.Simulation.Api.Endpoints;

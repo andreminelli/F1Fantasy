@@ -1,6 +1,6 @@
-﻿using F1Fantasy.Domain.Simulation;
+﻿using F1Fantasy.Simulation.Domain;
 
-namespace F1Fantasy.Infrastructure.Memory;
+namespace F1Fantasy.Simulation.Infrastructure.Memory;
 
 public class TeamRepository : ITeamRepository
 {

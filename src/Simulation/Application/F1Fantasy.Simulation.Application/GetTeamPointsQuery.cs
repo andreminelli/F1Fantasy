@@ -1,7 +1,7 @@
-﻿using F1Fantasy.Domain.Simulation;
-using F1Fantasy.Infrastructure.Abstractions;
+﻿using F1Fantasy.Infrastructure.Abstractions;
+using F1Fantasy.Simulation.Domain;
 
-namespace F1Fantasy.Application.Simulation;
+namespace F1Fantasy.Simulation.Application;
 
 public record GetTeamPointsQuery(TeamId TeamId) : IQuery<GetTeamPointsQuery, TeamPointsQueryResult>;
 

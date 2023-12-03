@@ -1,4 +1,4 @@
-﻿namespace F1Fantasy.Domain.Simulation;
+﻿namespace F1Fantasy.Simulation.Domain;
 
 public interface ITeamRepository
 {

@@ -1,6 +1,6 @@
 ﻿using F1Fantasy.Domain.SharedKernel;
 
-namespace F1Fantasy.Domain.Simulation;
+namespace F1Fantasy.Simulation.Domain;
 
 public class Team : Entity<TeamId>
 {
@@ -27,11 +27,11 @@ public class Team : Entity<TeamId>
     protected virtual int GetPointsForDriverPlace(int place)
         => place switch
         {
-            1       => 30,
-            2       => 25,
-            3       => 20,
-            <= 20   => 20 - place,
-            _       => 0
+            1 => 30,
+            2 => 25,
+            3 => 20,
+            <= 20 => 20 - place,
+            _ => 0
         };
 
     private int GetPointsForDriversPositions(RaceGrid raceGrid)

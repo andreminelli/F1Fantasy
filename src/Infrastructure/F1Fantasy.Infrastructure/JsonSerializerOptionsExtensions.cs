@@ -1,7 +1,7 @@
 ﻿using F1Fantasy.Infrastructure.Json;
 using System.Text.Json;
 
-namespace F1Fantasy.Infrastructure;
+namespace F1Fantasy.Simulation.Infrastructure;
 
 public static class JsonSerializerOptionsExtensions
 {

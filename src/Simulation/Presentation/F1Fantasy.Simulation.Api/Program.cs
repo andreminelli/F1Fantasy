@@ -1,11 +1,15 @@
 using F1Fantasy.Infrastructure;
+using F1Fantasy.Simulation.Application;
+using F1Fantasy.Simulation.Infrastructure;
 using FastEndpoints;
 using FastEndpoints.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddInfrastructure();
-builder.Services.AddApplicationHandlers<F1Fantasy.Application.Simulation.GetTeamPointsQuery>();
+builder.Services
+    .AddInfrastructure()
+    .AddSimulationInfrastructure()
+    .AddApplicationHandlers<GetTeamPointsQuery>();
 
 builder.Services
     .AddFastEndpoints()

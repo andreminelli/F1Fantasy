@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace F1Fantasy.Domain.Simulation;
+namespace F1Fantasy.Simulation.Domain;
 
 public record TeamId : IParsable<TeamId>
 {
