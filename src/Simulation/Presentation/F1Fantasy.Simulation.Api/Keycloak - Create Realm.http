@@ -1,0 +1,21 @@
+@keycloak_server = http://localhost:8888 
+
+# Create F1Fantasy Realm
+POST {{keycloak_server}}/admin/realms
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTE5hVndvcS1XM3BfLVJVbjhybXpmVVZxNFJsNTdlMTNEemJ3dDM4ZTFBIn0.eyJleHAiOjE3MDE4MjQyODksImlhdCI6MTcwMTgyMzk4OSwianRpIjoiMmYyMDAxOTUtNWJhNy00Mjk1LTgxNGMtMjE5MmY2MzM4NzNkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4ODg4L3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI5ODQ5YmVmNC05M2U2LTQ3MDAtYmU0NC05MDcxZjM0OGQxNDgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiZTJmOTQwMjMtMjVhZC00NDczLWIzOWItNDhkNDRmN2Q1ODkyIiwiYWNyIjoiMSIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImUyZjk0MDIzLTI1YWQtNDQ3My1iMzliLTQ4ZDQ0ZjdkNTg5MiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.MIHuBq4cAcVFfxqLj3EPDNaEPYI9GhLkfvSXSNfFpN4bBhUp388wEAszgmEiV3C4mxBtOW0ZnY3ssVZ3AZelursQ4zf0PoHU6H14Td6sdkRmMoC0eCNKloxbM3x580jJiE6T7h5AwboNPCyMBEr8u48N1jKFP9tVgpCX3okF_QpLbVxPvvMJrLPcatRIKxZtPmdLywL8VgTKOl7NoEtjwiLcFvd4P5fc1YLqqhXRQgb0hVsCms7_WDCltF5YZoNZsvQpn_waGnMkmoslvGeNlnmmEbJDlUYc9fO84kXG-6WVmm_ta9EOnmUoqSBeTWa0NM5re081LhjbMtkxcbJP1A
+Content-Type: application/json
+
+{
+    "id": "F1Fantasy",
+    "realm": "F1Fantasy",
+    "displayName": "F1Fantasy",
+    "enabled": true,
+    "sslRequired": "external",
+    "registrationAllowed": false,
+    "loginWithEmailAllowed": true,
+    "duplicateEmailsAllowed": false,
+    "resetPasswordAllowed": false,
+    "editUsernameAllowed": false,
+    "bruteForceProtected": true,
+    "accessTokenLifespan": 300
+}

@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Simulation.Applic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Infrastructure.Abstractions", "F1Fantasy.Infrastructure.Abstractions\F1Fantasy.Infrastructure.Abstractions.csproj", "{513B01BA-04A5-4341-B599-4961EEB802A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Fantasy.Infrastructure", "F1Fantasy.Infrastructure\F1Fantasy.Infrastructure.csproj", "{70EBC8E5-BECE-43E1-8F9A-CB5E07141BD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Infrastructure", "F1Fantasy.Infrastructure\F1Fantasy.Infrastructure.csproj", "{70EBC8E5-BECE-43E1-8F9A-CB5E07141BD5}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B75124F7-F2B6-4EB2-A7B0-2FE062F6D6DC}"
 EndProject
