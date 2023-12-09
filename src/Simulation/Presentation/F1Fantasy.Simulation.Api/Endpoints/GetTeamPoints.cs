@@ -16,7 +16,6 @@ public class GetTeamPoints : Endpoint<GetTeamPointsQuery, TeamPointsQueryResult>
     public override void Configure()
     {
         Get("/teams/{teamId}/points");
-        AllowAnonymous();
     }
 
     public override async Task HandleAsync(GetTeamPointsQuery request, CancellationToken cancellationToken)

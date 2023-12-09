@@ -17,5 +17,5 @@ Content-Type: application/json
     "resetPasswordAllowed": false,
     "editUsernameAllowed": false,
     "bruteForceProtected": true,
-    "accessTokenLifespan": 300
+    "accessTokenLifespan": 1200
 }
