@@ -16,6 +16,7 @@ public class GetTeamPoints : Endpoint<GetTeamPointsQuery, TeamPointsQueryResult>
     public override void Configure()
     {
         Get("/teams/{teamId}/points");
+        Roles(ApiRoles.RegularUser);
     }
 
     public override async Task HandleAsync(GetTeamPointsQuery request, CancellationToken cancellationToken)
