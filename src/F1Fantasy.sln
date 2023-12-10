@@ -18,8 +18,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1401E24A-8996-431E-AB8C-39EBBED304D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Simulation.Infrastructure", "Infrastructure\F1Fantasy.Infrastructure\F1Fantasy.Simulation.Infrastructure.csproj", "{1C57913B-DED3-4F6C-84B8-268C43D44F4E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simulation", "Simulation", "{2DFD7FFA-3665-4B71-9663-E6ED3BB2B696}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Domain.SharedKernel", "F1Fantasy.Domain.SharedKernel\F1Fantasy.Domain.SharedKernel.csproj", "{538EA163-9E18-4040-B508-793193CA3E11}"
@@ -38,16 +36,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Infrastructure", 
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B75124F7-F2B6-4EB2-A7B0-2FE062F6D6DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keycloak Setup", "Keycloak Setup", "{14B8ECD8-49BB-44D5-8189-09675CBF7040}"
+	ProjectSection(SolutionItems) = preProject
+		Keycloak Setup\1 - Get Admin Token.http = Keycloak Setup\1 - Get Admin Token.http
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Simulation.Infrastructure", "Simulation\Infrastructure\F1Fantasy.Simulation.Infrastructure\F1Fantasy.Simulation.Infrastructure.csproj", "{1458EB44-4E9A-4B52-900D-2C29C4F50587}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C57913B-DED3-4F6C-84B8-268C43D44F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C57913B-DED3-4F6C-84B8-268C43D44F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C57913B-DED3-4F6C-84B8-268C43D44F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C57913B-DED3-4F6C-84B8-268C43D44F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{538EA163-9E18-4040-B508-793193CA3E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{538EA163-9E18-4040-B508-793193CA3E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{538EA163-9E18-4040-B508-793193CA3E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,6 +81,10 @@ Global
 		{B75124F7-F2B6-4EB2-A7B0-2FE062F6D6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B75124F7-F2B6-4EB2-A7B0-2FE062F6D6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B75124F7-F2B6-4EB2-A7B0-2FE062F6D6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1458EB44-4E9A-4B52-900D-2C29C4F50587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1458EB44-4E9A-4B52-900D-2C29C4F50587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1458EB44-4E9A-4B52-900D-2C29C4F50587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1458EB44-4E9A-4B52-900D-2C29C4F50587}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,11 +94,11 @@ Global
 		{60146A28-C361-419F-92A2-A74F928773FC} = {2DFD7FFA-3665-4B71-9663-E6ED3BB2B696}
 		{DC11D762-ED3D-41F3-890C-51A92AF93B3B} = {2DFD7FFA-3665-4B71-9663-E6ED3BB2B696}
 		{1401E24A-8996-431E-AB8C-39EBBED304D5} = {2DFD7FFA-3665-4B71-9663-E6ED3BB2B696}
-		{1C57913B-DED3-4F6C-84B8-268C43D44F4E} = {1401E24A-8996-431E-AB8C-39EBBED304D5}
 		{62A10D6F-F52F-4E9F-B633-5BEF70D96E12} = {60146A28-C361-419F-92A2-A74F928773FC}
 		{AEBA96E0-A2C0-41C1-86B6-6A65AB9FC801} = {22080F74-748E-4625-BFC0-64FEE84136B5}
 		{61830E3A-5FA5-4E54-BA73-A2596E36CC02} = {22080F74-748E-4625-BFC0-64FEE84136B5}
 		{0468D7A8-2262-41C3-A43D-412DF1E3F495} = {DC11D762-ED3D-41F3-890C-51A92AF93B3B}
+		{1458EB44-4E9A-4B52-900D-2C29C4F50587} = {1401E24A-8996-431E-AB8C-39EBBED304D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD0CEDA6-0D3D-47C7-9DFA-A765A8ADF36E}
