@@ -27,6 +27,7 @@
     <ProjectReference Include="..\..\..\F1Fantasy.Infrastructure.Abstractions\F1Fantasy.Infrastructure.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\F1Fantasy.Infrastructure\F1Fantasy.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Application\F1Fantasy.Simulation.Application\F1Fantasy.Simulation.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\F1Fantasy.Simulation.Infrastructure\F1Fantasy.Simulation.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
