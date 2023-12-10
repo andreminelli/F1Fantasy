@@ -3,7 +3,6 @@ using F1Fantasy.Simulation.Application;
 using F1Fantasy.Simulation.Infrastructure;
 using FastEndpoints;
 using FastEndpoints.Swagger;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
