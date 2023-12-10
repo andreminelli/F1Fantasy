@@ -2,5 +2,6 @@
 
 public static class ApiRoles
 {
-    public static string RegularUser = "regular-user";
+    public static readonly string EventPublisher = "event-publisher";
+    public static readonly string RegularUser = "regular-user";
 }

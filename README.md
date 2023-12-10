@@ -1,10 +1,14 @@
 # F1 Fantasy 
 
-A toy project for a F1 Fantasy simulation application.
+A toy project for a F1 Fantasy simulation application using .Net 8.
 
 **DDD** (Domain Drive Design) is used for modeling.
 
 **Clean Architecture** and **CQS** (Command/Query Separation) are used on its implementation.
+
+**Docker** & **Docker Compose** are used to great full & reproducible local development environment.
+
+**Keycloak** is used as Identity Provider.
 
 ## Architecture
 
@@ -19,7 +23,7 @@ A toy project for a F1 Fantasy simulation application.
 ### Bounded Contexts
 - [Simulation](https://miro.com/app/board/uXjVNKoeXd8=/)
 - [Data Provider](https://miro.com/app/board/uXjVNKt88fI=/)
-- Inventory
 - Registration
+- Inventory
 - Market
 
