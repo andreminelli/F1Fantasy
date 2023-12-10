@@ -1,5 +1,6 @@
 ﻿namespace F1Fantasy.Infrastructure.Abstractions;
 
-public class ICommand<TCommandResult>
+public interface ICommand<TCommand, TCommandResult>
+    where TCommandResult : ICommandResult
 {
 }

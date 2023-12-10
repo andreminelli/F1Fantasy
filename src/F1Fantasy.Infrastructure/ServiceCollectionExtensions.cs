@@ -8,6 +8,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddTransient<IQueryDispatcher, QueryDispatcher>();
+        services.AddTransient<ICommandDispatcher, CommandDispatcher>();
         return services;
     }
 
@@ -18,7 +19,7 @@ public static class ServiceCollectionExtensions
             selector.FromAssembliesOf(typeof(T))
                     .AddClasses(filter =>
                     {
-                        filter.AssignableTo(typeof(IQueryHandler<,>));
+                        filter.AssignableToAny(typeof(IQueryHandler<,>), typeof(ICommandHandler<,>));
                     })
                     .AsImplementedInterfaces()
                     .WithSingletonLifetime();

@@ -1,7 +1,8 @@
 ﻿namespace F1Fantasy.Infrastructure.Abstractions;
 
-public interface ICommandHandler<in TCommand, TCommandResult>
-    where TCommand : ICommand<TCommandResult>
+public interface ICommandHandler<TCommand, TCommandResult>
+    where TCommand : ICommand<TCommand, TCommandResult>
+    where TCommandResult : ICommandResult
 {
     Task<TCommandResult> Handle(TCommand command, CancellationToken cancellationToken);
 }
