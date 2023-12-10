@@ -1,7 +1,0 @@
-@keycloak_server = http://localhost:8888 
-
-# Get Master Token
-POST {{keycloak_server}}/realms/master/protocol/openid-connect/token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=password&client_id=admin-cli&username=admin&password=admin

@@ -1,0 +1,199 @@
+# Get Master Token
+@keycloak_server = http://localhost:8888 
+
+@admin_username = admin
+@admin_password = admin
+
+@realm-internal-id = F1Fantasy
+
+POST {{keycloak_server}}/realms/master/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id=admin-cli&username={{admin_username}}&password={{admin_password}}
+
+###
+# Create F1Fantasy Realm
+
+// Get "access_token"" from previous call and set below
+@admin_token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtY2M0YVU3cVFqX0ZIbVRqRUFNaERKZzl6RHU0dHVzdE12VUR1SDR4NTNnIn0.eyJleHAiOjE3MDIyMzIxNTgsImlhdCI6MTcwMjIzMjA5OCwianRpIjoiNWRkZTUyYzktMmE2OS00NDgxLTk0MWYtMDEzYmM0N2Q4OWYzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4ODg4L3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI5OWIxNWZhOS02ODA1LTQxYjctYjM4My04NDYwMGRhMDk1MDMiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNTk1NmNlYjQtMjUzOS00YmNkLTliZDUtNzdkMDNkZWM0ZDkzIiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjU5NTZjZWI0LTI1MzktNGJjZC05YmQ1LTc3ZDAzZGVjNGQ5MyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.AzIBl2L4dX5DpDPRk88UoLJY-0PI9t7aGxFxK-aB1e6qovScULMbPzyEa2CmIriJ1PkwN6D3Xn5zU36Eyv7pWzR6dNRp9VgypSWkUtXIpAu3KyEB0HZUCgJRy7Dok-cN6m3qwM-Ob4g3lU_lxuwbD7F9g7RbvliYIdlYjxY_TE2JjmhniAav9rs4E9FU-2NmPg9x7vzDEUKh9z6vr-GnttdOOt0PpcN2ZICTTWmXSMQca3kqgvCMqRqvP2c27HbIeh7l9N-RboW0bGxtrfN1Q0uq7oiRG5_qAYaDxeFY0Sz9APpKJzQJb9heMprWqflDgM59D1HOHODC0yx2HD0MyA
+
+POST {{keycloak_server}}/admin/realms
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+    "id": "{{realm-internal-id}}",
+    "realm": "{{realm-internal-id}}",
+    "displayName": "{{realm-internal-id}}",
+    "enabled": true,
+    "sslRequired": "external",
+    "registrationAllowed": false,
+    "loginWithEmailAllowed": true,
+    "duplicateEmailsAllowed": false,
+    "resetPasswordAllowed": false,
+    "editUsernameAllowed": false,
+    "bruteForceProtected": true,
+    "accessTokenLifespan": 1200
+}
+
+###
+# Create F1Fantasy Realm roles
+@realm-role-name = regular-user
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/roles
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+    "name": "{{realm-role-name}}",
+    "description": "",
+    "attributes": {}
+}
+
+###
+# Create Web Frontend Client (get the client internal id)
+
+@web-frontend_client_id = web-frontend
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/clients
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{ 
+    "clientId":"{{web-frontend_client_id}}",
+    "name":"{{web-frontend_client_id}}",
+    "publicClient": true,
+    "directAccessGrantsEnabled": true,
+    "fullScopeAllowed": false
+}
+
+###
+# Create Web Frontend Client audience mapper
+
+// Get "id" on "Location" header from previous call and set below
+@cliend-internal-id = a096fb30-d6ff-4a65-b18d-c77018ae457b
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/clients/{{cliend-internal-id}}/protocol-mappers/models
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+    "name":"audience-mapper",
+    "protocol":"openid-connect",
+    "protocolMapper":"oidc-audience-mapper",
+    "config":{
+        "included.client.audience":"{{web-frontend_client_id}}",
+        "access.token.claim":"true"
+    }
+}
+
+###
+# Create Web Frontend Client role mapper
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/clients/{{cliend-internal-id}}/protocol-mappers/models
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{
+    "name": "realm-roles-mapper",
+    "protocol": "openid-connect",
+    "protocolMapper": "oidc-usermodel-realm-role-mapper",
+    "config": {
+        "claim.name": "roles",
+        "introspection.token.claim": "true",
+        "multivalued": "true",
+        "userinfo.token.claim": "true",
+        "id.token.claim": "true",
+        "access.token.claim": "true"
+    }
+}
+
+###
+# Get Realm Role (to get its id)
+
+GET {{keycloak_server}}/admin/realms/{{realm-internal-id}}/roles/{{realm-role-name}}
+Authorization: Bearer {{admin_token}}
+
+###
+# Create Web Frontend Client scope mapping
+
+// Get "id" from previous call and set below
+@realm-role-id = 6add9f22-38d4-42bc-a6a1-c547f0f6c06a
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/clients/{{cliend-internal-id}}/scope-mappings/realm
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+[
+    {
+        "id": "{{realm-role-id}}",
+        "name": "{{realm-role-name}}",
+        "containerId": "{{realm-internal-id}}"
+    }
+]
+
+###
+# Create API Client
+
+@api-simulation_client_id = api-simulation
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/clients
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{ 
+    "clientId":"{{api-simulation_client_id}}",
+    "name":"{{api-simulation_client_id}}",
+    "clientAuthenticatorType": "client-secret",
+    "publicClient": false,
+    "directAccessGrantsEnabled": false,
+    "fullScopeAllowed": false
+}
+
+###
+# Create User
+
+@user_username = john.doe-test.com
+@user_first_name = John
+@user_last_name = Doe
+@user_email = john.doe@test.com
+@user_password = 123456
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/users
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+{ 
+    "username":"{{user_username}}",
+    "firstName":"{{user_first_name}}",
+    "lastName":"{{user_last_name}}", 
+    "email":"{{user_email}}", 
+    "enabled":"true", 
+    "attributes": [
+    ],
+    "credentials": [
+        {
+            "type": "password",
+            "value": "{{user_password}}",
+            "temporary": false
+        }
+    ]
+}
+
+###
+# Add realm role to user
+
+// Get "id" on "Location" header from previous call and set below
+@user-id = b16a6ada-b499-4b4e-99c9-24235f5e88bd
+
+POST {{keycloak_server}}/admin/realms/{{realm-internal-id}}/users/{{user-id}}//role-mappings/realm
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+[
+  {
+    "id": "{{realm-role-id}}",
+    "name": "{{realm-role-name}}",
+    "containerId": "{{realm-internal-id}}"
+  }
+]
