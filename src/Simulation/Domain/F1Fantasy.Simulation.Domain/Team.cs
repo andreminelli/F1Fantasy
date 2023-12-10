@@ -14,6 +14,9 @@ public class Team : Entity<TeamId>
 
     protected IList<Driver> Drivers { get; }
 
+    public void AddDriver(Driver driver)
+        => Drivers.Add(driver);
+
     public void UpdatePointsForRaceGridSet(RaceGrid raceGrid)
     {
         Points += GetPointsForDriversPositions(raceGrid);
@@ -40,7 +43,7 @@ public class Team : Entity<TeamId>
         foreach (var driver in Drivers)
         {
             points += GetPointsForDriverPlace(
-                        raceGrid.GetPosition(driver));
+                        raceGrid.GetPosition(driver.Id));
         }
 
         return points;

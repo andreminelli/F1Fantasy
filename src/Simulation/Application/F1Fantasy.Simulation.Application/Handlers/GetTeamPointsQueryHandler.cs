@@ -1,5 +1,4 @@
 ﻿using F1Fantasy.Infrastructure.Abstractions;
-using F1Fantasy.Simulation.Application;
 using F1Fantasy.Simulation.Domain;
 
 namespace F1Fantasy.Simulation.Application.Handlers;
