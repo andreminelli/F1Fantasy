@@ -1,0 +1,19 @@
+@keycloak_server = http://localhost:8888 
+@admin_token = eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaTE5hVndvcS1XM3BfLVJVbjhybXpmVVZxNFJsNTdlMTNEemJ3dDM4ZTFBIn0.eyJleHAiOjE3MDIyMjAxMzgsImlhdCI6MTcwMjIxOTgzOCwianRpIjoiNTg4NGE2YjQtY2ZhMS00ZjkxLWI3ZTEtZjYwNmFmNzMxMTRmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4ODg4L3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI5ODQ5YmVmNC05M2U2LTQ3MDAtYmU0NC05MDcxZjM0OGQxNDgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiZmUxOWQ2MTYtZmVjYi00MzkxLWE0YjMtMThlNDRiMmZhYjI2IiwiYWNyIjoiMSIsInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6ImZlMTlkNjE2LWZlY2ItNDM5MS1hNGIzLTE4ZTQ0YjJmYWIyNiIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.YN-xuATVU1Jj4lDiBKUnYpCiTO7AHXvIdmb8N5fHT0yd8TqKNoFp01doRH8BV6RMj3WNPvcbjy1Sov7JjLbPnn3xux8tMmjd6VAi5O2KE7KmFVV6spyQAxc3itjVJ3I9AvoJP6wLN_fmT4TX0Av9tP-GbqePmaN8Osd2TQ2AxQ-0UKT5nrTlUM6NzJp3Q6dlQMTUcrmJJ8Hh8VCqn_MlWtnIYgOiHR-MRTvcEZ_mLPr60QGKyx0vI4WVZz5fj46y2usjjAaowsYVBm8sDL6-4Zb1YZr40GlP9ukpq-ghSX09VNofx2Gc3C3jnA3I89TFOK6aXKK54JNk4jw0PL34Kw
+# Returned from "Create Frontend Client" request
+@cliend-internal-id = a03c19b1-5f9f-4e9e-8ef9-c62ebf136294
+# Rerturn from "Create Realm Roles" request
+@role-id = 2348415a-e391-4fb3-8214-88faf837cc28
+
+# Create API Client
+POST {{keycloak_server}}/admin/realms/F1Fantasy/clients/{{cliend-internal-id}}/scope-mappings/realm
+Authorization: Bearer {{admin_token}}
+Content-Type: application/json
+
+[
+    {
+        "id": "{{role-id}}",
+        "name": "regular-user",
+        "containerId": "F1Fantasy"
+    }
+]

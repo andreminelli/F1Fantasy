@@ -6,4 +6,4 @@
 POST {{keycloak_server}}/realms/F1Fantasy/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=password&client_id=api-simulation&username={{username}}&password={{password}}
+grant_type=password&client_id=web-frontend&username={{username}}&password={{password}}
