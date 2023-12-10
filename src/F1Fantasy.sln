@@ -39,6 +39,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keycloak Setup", "Keycloak Setup", "{14B8ECD8-49BB-44D5-8189-09675CBF7040}"
 	ProjectSection(SolutionItems) = preProject
 		Keycloak Setup\1 - Get Admin Token.http = Keycloak Setup\1 - Get Admin Token.http
+		Keycloak Setup\10 - Create User.http = Keycloak Setup\10 - Create User.http
+		Keycloak Setup\9 - Create API Client.http = Keycloak Setup\9 - Create API Client.http
+		Keycloak Setup\11 - Add User Roles.http = Keycloak Setup\11 - Add User Roles.http
+		Keycloak Setup\8 - Create Frontend Client Scope Mapping.http = Keycloak Setup\8 - Create Frontend Client Scope Mapping.http
+		Keycloak Setup\7 - Create Frontend Client Role Mapper.http = Keycloak Setup\7 - Create Frontend Client Role Mapper.http
+		Keycloak Setup\6 - Create Frontend Client Audience Mapper.http = Keycloak Setup\6 - Create Frontend Client Audience Mapper.http
+		Keycloak Setup\5 - Create Frontend Client.http = Keycloak Setup\5 - Create Frontend Client.http
+		Keycloak Setup\4 - Get Realm Role.http = Keycloak Setup\4 - Get Realm Role.http
+		Keycloak Setup\3 - Create Realm Roles.http = Keycloak Setup\3 - Create Realm Roles.http
+		Keycloak Setup\2 - Create Realm.http = Keycloak Setup\2 - Create Realm.http
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Fantasy.Simulation.Infrastructure", "Simulation\Infrastructure\F1Fantasy.Simulation.Infrastructure\F1Fantasy.Simulation.Infrastructure.csproj", "{1458EB44-4E9A-4B52-900D-2C29C4F50587}"
